@@ -1,24 +1,5 @@
 <template>
 <div>
-    <nav class="flex items-center justify-between flex-wrap bg-transparent  p-8">
-        <div class="flex items-center flex-shrink-0 text-blue-900 mr-6">
-          <img @click="seleccionar('HelloWorld')" class="fill-current" width="100" height="54" src="@/img/adarapp.png"   >
-        
-        </div>
-        <div class="block lg:hidden">
-          <button class="flex items-center px-3 py-3 border rounded text-indigo-600  border-indigo-400 hover:text-blue-400 hover:border-blue-600 ">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-          </button>
-        </div>
-        <div class="hidden md:block md:ml-12 md:pr-20">
-            <a @click="seleccionar('HelloWorld')" href="#" class="font-semibold text-blue-700 hover:text-gray-900 transition duration-150 ease-in-out">Inicio</a>
-            <a @click="seleccionar('registro')" href="#" class="ml-10 font-semibold text-blue-700 hover:text-gray-900 transition duration-150 ease-in-out">Registro</a>
-            <a @click="seleccionar('login')" href="#" class="ml-10 font-semibold text-blue-700 hover:text-gray-900 transition duration-150 ease-in-out">Login</a>        
-         
-          </div>
-          
-      </nav>
-
         <content>
         
           <component :is="componenenteactual"> 
@@ -31,10 +12,9 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-import login from '@/views/Login.vue'
-import registro from '@/views/Registro.vue'
 
+import pokedex from '@/components/pokedex.vue'
+import tarjeta from '@/components/tarjeta.vue'
 
 
 /*import Servicios from '@/components/Servicios.vue'
@@ -46,20 +26,12 @@ import Formulario from '@/components/Formulario.vue'
 export default {
       name:'app',
   components: {
-  HelloWorld,
-  login,
-  registro
-
-  /*
-  Servicios,
-  Organigrama,
-  Pooter,
-  Objetivo,
-  Formulario */
+  pokedex,
+  tarjeta,
    },
   data(){
     return{
-      componenenteactual:'HelloWorld',
+      componenenteactual:'pokedex',
     }
   },
 
